@@ -25,8 +25,8 @@ export const Header = ({ onChangeUserName }: HeaderType) => {
 
   return (
     <div className="h-30 bg-[url(/src/assets/hero-image-github-profile-sm.jpg)] bg-bottom md:h-50 md:bg-[url(/src/assets/hero-image-github-profile.jpg)] ">
-      <div className="flex justify-center max-w-[500px]">
-        <div className="relative m-4">
+      <div className="flex justify-center">
+        <div className="relative m-4 max-w-[500px]">
           <input
             name="username"
             placeholder="username"

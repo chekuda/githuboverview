@@ -26,7 +26,7 @@ describe("Header", () => {
 
     const userInput = selectors.getUserNameInput();
 
-    userEvent.type(userInput, "jose"); // async typing
+    userEvent.type(userInput, "jose");
 
     await waitFor(() => {
       expect(userInput).toHaveValue("jose");
