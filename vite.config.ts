@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: "/githuboverview/",
   test: {
     // 👋 add the line below to add jsdom to vite
     environment: "jsdom",
