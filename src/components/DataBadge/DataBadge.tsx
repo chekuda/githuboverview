@@ -7,7 +7,7 @@ export type DataBadgeProps = {
 export const DataBadge = ({ title, data }: DataBadgeProps) => {
   return (
     <div>
-      <div className="badge badge-neutral badge-xl mb-3 mr-3 mt-3 p-5 capitalize">
+      <div className="badge bg-gray-800 badge-xl mb-3 mr-3 mt-3 p-5 capitalize">
         <span>{title}</span>
         <span className="divider divider-start divider-accent divider-vertical" />
         <span>{data}</span>

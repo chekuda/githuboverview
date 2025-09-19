@@ -33,14 +33,14 @@ export const Home = () => {
       {!isLoading && error && <BannerInfo type={BANNER_TYPES.noFound} />}
       {!isLoading && gitHubUser?.login && (
         <>
-          <div className="ml-10">
+          <div className="pl-10 pr-10">
             <PersonalData
               followers={followers}
               following={following}
               avatar={avatar_url}
               location={location}
             />
-            <RepoInsights />
+            {!!repoList?.length && <RepoInsights repoList={repoList} />}
           </div>
         </>
       )}
