@@ -1,0 +1,1 @@
+export { RepoInsights } from "./RepoInsights";

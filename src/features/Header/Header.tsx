@@ -26,13 +26,13 @@ export const Header = ({ onChangeUserName }: HeaderType) => {
   return (
     <div className="h-30 bg-[url(/src/assets/hero-image-github-profile-sm.jpg)] bg-bottom md:h-50 md:bg-[url(/src/assets/hero-image-github-profile.jpg)] ">
       <div className="flex justify-center">
-        <div className="relative m-4 max-w-[500px]">
+        <div className="relative m-4 min-w-min md:min-w-lg">
           <input
             name="username"
             placeholder="username"
             type="text"
             value={userName}
-            className="input pl-9"
+            className="input pl-9 w-full"
             onChange={handleChange}
           />
           <span className="absolute bg-[url(/src/assets/Search.svg)] h-100% w-6 h-5 left-2 top-2 z-index:2"></span>

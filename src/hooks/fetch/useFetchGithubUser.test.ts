@@ -21,7 +21,8 @@ describe("useFetchGithubUser", () => {
       await waitFor(() => {
         expect(result.current).toEqual({
           isLoading: true,
-          user: undefined,
+          gitHubUser: undefined,
+          error: "",
           handleSetUser: expect.any(Function),
         });
       });
@@ -29,7 +30,8 @@ describe("useFetchGithubUser", () => {
       await waitFor(() => {
         expect(result.current).toEqual({
           isLoading: false,
-          user: { name: "jose" },
+          gitHubUser: { name: "jose" },
+          error: "",
           handleSetUser: expect.any(Function),
         });
       });
@@ -48,8 +50,9 @@ describe("useFetchGithubUser", () => {
       await waitFor(() => {
         expect(result.current).toEqual({
           isLoading: false,
-          user: undefined,
+          gitHubUser: undefined,
           handleSetUser: expect.any(Function),
+          error: "No User Found",
         });
       });
     });

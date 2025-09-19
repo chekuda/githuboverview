@@ -3,23 +3,31 @@ import { serviceGetUserByUserName } from "../../services/user/user";
 import type { GithubUser } from "../../services/user/user.types";
 
 export const useFetchGithubUser = () => {
-  const [user, setUser] = useState<GithubUser>();
+  const [gitHubUser, setGitHubUser] = useState<Partial<GithubUser>>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
   const handleFetchUserData = async (userName: string) => {
-    if (!userName) return;
+    if (!userName) {
+      setGitHubUser({});
+      return;
+    }
     try {
       setIsLoading(true);
       const data = await serviceGetUserByUserName(userName);
-      setUser(data);
+      setGitHubUser(data);
       setIsLoading(false);
+      setError("");
     } catch (e) {
       setIsLoading(false);
+      setGitHubUser({});
+      setError("No User Found");
       console.log("error", e);
     }
   };
   return {
     handleSetUser: handleFetchUserData,
     isLoading,
-    user,
+    gitHubUser,
+    error,
   };
 };

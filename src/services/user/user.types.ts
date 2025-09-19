@@ -15,3 +15,17 @@ export interface GithubUser {
   created_at: string;
   updated_at: string;
 }
+
+export interface GitHubRepos {
+  id: number;
+  node_id: string;
+  name: string;
+  private: false;
+  description: string;
+  fork: false;
+  url: string;
+  updated_at: string;
+  git_url: string;
+  stargazers_count: number;
+  forks_count: number;
+}
